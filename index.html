@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar - Flexbox */
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        /* Main Content - CSS Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .content {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            background-color: #e0e0e0;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            /* Tablet Layout */
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem 2rem;
+            }
+
+            .nav-links {
+                flex-direction: row;
+            }
+
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            /* Desktop Layout */
+            .container {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="content">
+            <h2>Main Content</h2>
+            <p>Before understanding a thread, one first needs to understand a UNIX process. A process is created by the operating system, and requires a fair amount of "overhead". Processes contain information about program resources and program execution state, including:
+                o Process ID, process group ID, user ID, and group ID
+                o Environment
+                o Working directory.
+                o Program instructions
+                o Registers
+                o Stack
+                o Heap
+                o File descriptors
+                o Signal actions
+                o Shared libraries
+                o Inter-process communication tools (such as message queues, pipes, semaphores, or shared memory).</p>
+        </main>
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>POSIX Threads, commonly known as pthreads, isanexecution modelthat exists independently from a programming language, as well as a parallel execution model. It allows a program to control multiple different flows of work that overlap in time.
+                The POSIX standard has continued to evolve and undergo revisions, including the Pthreads specification.
+                Pthreads are defined as a set of C language programming types and procedure calls, implemented with a pthread.h header/include file and a thread library - though this library may be part of another library, such
+                as libc, in some implementations.</p>
+        </aside>
+    </div>
+</body>
+</html>
